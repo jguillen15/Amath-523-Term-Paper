@@ -27,8 +27,7 @@ eventos = [  1   0 ; ... % alfa*y
 resultados = [0; odes]; % [time,x(t), y(t)]
 pt = 1;
 tasas=[alfa*odes(2);beta*odes(1)*(1+odes(2));sigma*odes(1);delta*odes(2)*(1+odes(1))];
-while(tiempo_actual < T) 
-    disp(tiempo_actual)
+while(tiempo_actual < T) && (odes(2) ~= 0 | odes(1) ~= 0)
     % Vector with transition weights
     tasas=[alfa*odes(2);beta*odes(1)*(1+odes(2));sigma*odes(1);delta*odes(2)*(1+odes(1))];
     % Compute delta_T (Exponential Distribution)
